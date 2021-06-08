@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make a Clock</title>
+
+  <style>
+    * {
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .wrap {
+      width: 10rem;
+      height: 10rem;
+      border: 10px solid #000;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .clock_body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .clock_body div {
+      width: 50%;
+      height: 5px;
+      background-color: lightcoral;
+      position: absolute;
+      top: 49%; /* 50% - border */
+      transform-origin: 100%;
+      transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    .clock_body div.clock_hour {
+      width: 30%;
+      left: 20%;
+    }
+    
+  </style>
+</head>
+<body>
+  <div  class="wrap">
+    <div class="clock_body">
+      <div class="clock_hour"></div>
+      <div class="clock_min"></div>
+      <div class="clock_sec"></div>
+    </div>
+  </div>
+  <script>
+    let clock_sec = document.querySelector('.clock_sec');
+    let clock_min = document.querySelector('.clock_min');
+    let clock_hour = document.querySelector('.clock_hour');
+
+  function setClock(){
+    let now = new Date()
+
+    // 초 설정
+    let now_sec = now.getSeconds();
+    let sec_rotate_deg = (now_sec / 60) * 360 + 90;
+    clock_sec.style.transform = 'rotate(' + sec_rotate_deg + 'deg)';
+
+    // 분 설정
+    let now_min = now.getMinutes();
+    let min_rotate_deg = (now_min / 60) * 360 + 90;
+    clock_min.style.transform = 'rotate(' + min_rotate_deg + 'deg)';
+
+    // 시간 설정
+    let now_hour = now.getHours();
+    let hour_rotate_deg = (now_hour / 12) * 360 + 90;
+    clock_hour.style.transform = 'rotate(' + hour_rotate_deg + 'deg)';
+  }
+
+  setInterval(setClock, 1000);
+
+  setClock();
+  </script>
+</body>
+</html>
