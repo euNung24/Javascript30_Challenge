@@ -73,7 +73,7 @@
     clock_sec.style.transform = 'rotate(' + sec_rotate_deg + 'deg)';
 
     // 분 설정
-    let now_min = now.getMinutes() + 15;
+    let now_min = now.getMinutes();
     let min_rotate_deg = (now_min / 60) * 360 + 90;
     clock_min.style.transform = 'rotate(' + min_rotate_deg + 'deg)';
 
