@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day3</title>
+  <style>
+    * {
+      margin: 0 auto;
+    }
+
+    :root{
+      --spacing : 10px;
+      --blur : 0px;
+      --base_color : #e46fda;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+
+    .main_body div {
+      margin: 50px;
+    }
+    
+    .base_color {
+      color: var(--base_color);
+    }
+
+    img {
+      padding: var(--spacing);
+      background-color: var(--base_color);
+      width: 300px;
+      filter: blur(var(--blur));
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="main_body">
+      <h1>Update CSS Variables with <span class="base_color">JS</span></h1>
+      <div>
+        <label for="spacing">Spacing:</label>
+        <input type="range" name="spacing" value=10 min=10 max=100 data-px="px">
+        <label for="blur">Blur:</label>
+        <input type="range" name="blur" class="controls" value=0  min=0 max=25 data-px="px">
+        <label for="base_color">Base Color</label>
+        <input type="color" name="base_color" value="#e46fda">
+      </div>
+      <img src="/IU.jpg" alt="">
+    </div>
+  </div>
+
+  <script>
+    const inputs = document.querySelectorAll('input');
+
+    function handleUpdate() {
+      const suffix = this.dataset.px || '';
+      document.documentElement.style.setProperty('--' + this.name, this.value + suffix);
+    }
+
+    inputs.forEach(input => input.addEventListener('change', handleUpdate))
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate))
+  </script>
+</body>
+</html>
