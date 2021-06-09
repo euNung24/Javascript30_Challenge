@@ -24,7 +24,7 @@
       align-items: center;
     }
 
-    .main_body div {
+    .wrap div {
       margin: 50px;
     }
     
@@ -42,18 +42,16 @@
 </head>
 <body>
   <div class="wrap">
-    <div class="main_body">
-      <h1>Update CSS Variables with <span class="base_color">JS</span></h1>
-      <div>
-        <label for="spacing">Spacing:</label>
-        <input type="range" name="spacing" value=10 min=10 max=100 data-px="px">
-        <label for="blur">Blur:</label>
-        <input type="range" name="blur" class="controls" value=0  min=0 max=25 data-px="px">
-        <label for="base_color">Base Color</label>
-        <input type="color" name="base_color" value="#e46fda">
-      </div>
-      <img src="/IU.jpg" alt="">
+    <h1>Update CSS Variables with <span class="base_color">JS</span></h1>
+    <div>
+      <label for="spacing">Spacing:</label>
+      <input type="range" name="spacing" value=10 min=10 max=100 data-px="px">
+      <label for="blur">Blur:</label>
+      <input type="range" name="blur" class="controls" value=0  min=0 max=25 data-px="px">
+      <label for="base_color">Base Color</label>
+      <input type="color" name="base_color" value="#e46fda">
     </div>
+    <img src="/IU.jpg" alt="">
   </div>
 
   <script>
