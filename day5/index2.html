@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day5</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-size: 20px;
+      font-weight: 200;
+      color: white;
+    }
+
+    .panels {
+      height: 100vh;
+      display: flex;
+    }
+
+    .panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      transition: 
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+    }
+
+    .panel > * {
+      width: 100%;
+      transition: transform 0.5s;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panel1 { background-image: url('/images/KakaoTalk_20210518_014134829.jpg'); }
+    .panel2 { background-image: url('/images/KakaoTalk_20210518_014134829_02.jpg');}
+    .panel3 { background-image: url('/images/KakaoTalk_20210518_014134829_03.jpg');}
+    .panel4 { background-image: url('/images/KakaoTalk_20210518_014134829_04.jpg');}
+    .panel5 { background-image: url('/images/KakaoTalk_20210518_115207095.jpg');}
+
+    .panel > *:first-child { transform: translateY(-100%);}
+    .panel.open-active > *:first-child { transform: translateY(0);}
+    .panel > *:last-child { transform: translateY(100%);}
+    .panel.open-active > *:last-child {transform: translateY(0);}
+
+    .panel > p:nth-child(2) {
+      font-size: 4em;
+    }
+    .panel.open {
+      font-size: 40px;
+      flex: 5;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="panels">
+    <div class="panel panel1">
+      <p>Hey</p>
+      <p>Let's</p>
+      <p>Dance</p>
+    </div>
+    <div class="panel panel2">
+      <p>Give</p>
+      <p>Take</p>
+      <p>Receive</p>
+    </div>
+    <div class="panel panel3">
+      <p>Experience</p>
+      <p>It</p>
+      <p>Today</p>
+    </div>
+    <div class="panel panel4">
+      <p>Give</p>
+      <p>All</p>
+      <p>You can</p>
+    </div>
+    <div class="panel panel5">
+      <p>Life</p>
+      <p>In</p>
+      <p>Motion</p>
+    </div>
+  </div>
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen() {
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e) {
+      if (e.propertyName.includes('flex')){
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+  </script>
+</body>
+</html>

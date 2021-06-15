@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-size: 20px;
+      font-weight: 200;
+      color: white;
+    }
+
+    .panels {
+      display: flex;
+      height: 100vh;
+    }
+
+    .panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      transition: 
+        font-size 0.7s cubic-bezier(0.73, -0.35, 0.96, -0.23),
+        flex 0.7s cubic-bezier(0.73, -0.35, 0.96, -0.23),
+        background 0.2s;
+    }
+
+    .panel1 {background-image: url('/images/KakaoTalk_20210518_014134829.jpg');}
+    .panel2 {background-image: url('/images/KakaoTalk_20210518_014134829_02.jpg');}
+    .panel3 {background-image: url('/images/KakaoTalk_20210518_014134829_03.jpg');}
+    .panel4 {background-image: url('/images/KakaoTalk_20210518_014134829_04.jpg');}
+    .panel5 {background-image: url('/images/KakaoTalk_20210518_115207095.jpg');}
+
+
+    .panel > * {
+      width: 100%;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.5s;
+    }
+
+    .panel p {
+      text-transform: uppercase;
+      font-family: 'Amatic SC', cursive;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 2em;
+    }
+
+    .panel > *:first-child {transform: translateY(-100%);}
+    .panel.open-active > *:first-child {transform: translateY(0);}
+    .panel > *:last-child {transform: translateY(100%);}
+    .panel.open-active > *:last-child{transform: translateY(0);}
+
+    .panel.open {
+      font-size: 40px;
+      flex: 5;
+    }
+
+    .panel p:nth-child(2) {
+      font-size: 4em;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .panel p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="panels">
+    <div class="panel panel1">
+      <div>Hey</div>
+      <div>Let's</div>
+      <div>Dance</div>
+    </div>
+    <div class="panel panel2">
+      <div>Give</div>
+      <div>Take</div>
+      <div>Receive</div>
+    </div>
+    <div class="panel panel3">
+      <div>Experience</div>
+      <div>It</div>
+      <div>Today</div>
+    </div>
+    <div class="panel panel4">
+      <div>Give</div>
+      <div>All</div>
+      <div>You can</div>
+    </div>
+    <div class="panel panel5">
+      <div>Life</div>
+      <div>In</div>
+      <div>Motion</div>
+    </div>
+  </div>
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen() {
+      this.classList.toggle('open');
+    }
+
+    function toggleOpenActive(e) {
+      if(e.propertyName.includes('flex')){
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click',toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleOpenActive));
+  </script>
+</body>
+</html>
