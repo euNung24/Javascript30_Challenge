@@ -70,17 +70,17 @@
     // 초 설정
     let now_sec = now.getSeconds();
     let sec_rotate_deg = (now_sec / 60) * 360 + 90;
-    clock_sec.style.transform = 'rotate(' + sec_rotate_deg + 'deg)';
+    clock_sec.style.transform = `rotate(${sec_rotate_deg}deg)`;
 
     // 분 설정
     let now_min = now.getMinutes();
     let min_rotate_deg = (now_min / 60) * 360 + 90;
-    clock_min.style.transform = 'rotate(' + min_rotate_deg + 'deg)';
+    clock_min.style.transform = `rotate(${min_rotate_deg}deg)`;
 
     // 시간 설정
     let now_hour = now.getHours();
     let hour_rotate_deg = (now_hour / 12) * 360 + 90;
-    clock_hour.style.transform = 'rotate(' + hour_rotate_deg + 'deg)';
+    clock_hour.style.transform = `rotate(${hour_rotate_deg}deg)`;
   }
 
   setInterval(setClock, 1000);
