@@ -103,6 +103,38 @@
 
   => transition이 끝나면 해당 함수를 실행
 
+## Day6 - AJAX Type Ahead
+#### < CSS >
+- text-transform: capitalize
+
+  => 영어 단어의 첫 단어를 모두 대문자로 변환
+
+- transfrom: perspective
+
+  => 관찰자 위치 (크기가 클수록 변형정도가 줄어듦)
+
+#### < Javascript >
+- fetch(url)
+
+  => HTTP resposne 객체를 래핑한 Promise 객체 반환
+
+  => then 메서드를 통해 resolve한 객체 전달 받음
+
+  => default로 GET 방식으로 동작
+
+  [fetch 함수 참고링크](https://velog.io/@eunjin/JavaScript-fetch-%ED%95%A8%EC%88%98-%EC%93%B0%EB%8A%94-%EB%B2%95-fetch-%ED%95%A8%EC%88%98%EB%A1%9C-HTTP-%EC%9A%94%EC%B2%AD%ED%95%98%EB%8A%94-%EB%B2%95)
+
+- new RegExp()
+
+  => 정규표현식
+  => g플래그 : 전역 검색(매칭되는 모든 문자열 검색)
+  
+    if) 사용x => 처음으로 매칭되는 값만 가져옴
+
+  => i플래그 : 대소문자 구별없이 검색
+
+  [정규표현식 참고링크](https://beomy.tistory.com/21)
+
 ## Day7 - Array Practice2
 #### < Javascript >
 - some()
