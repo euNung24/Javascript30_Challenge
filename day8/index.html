@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day8</title>
+  
+</head>
+<body>
+  <canvas id="draw" width="800" height="800"></canvas>
+
+  <script>
+    const canvas = document.querySelector('#draw');
+    const ctx = canvas.getContext('2d');
+    const color = document.querySelector('#color');
+    const px = document.querySelector('#fontsize');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    ctx.strokeStyle = '#BADA55' // 기본 색상
+    ctx.lineCap='round' // 선의 끝 모양 설정
+    ctx.lineJoin='round' // 선의 모서리 설정
+    ctx.lineWidth='10'
+    // ctx.globalCompositeOperation = '';
+    // 투명도? 설정
+
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+    let hue = 0;
+    let direction = true;
+
+
+    function draw(e) {
+      if(!isDrawing) return; // isDrawing = false 경우 동작x
+
+      ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+      ctx.beginPath();  //선을 그린다
+      ctx.moveTo(lastX, lastY); // 시작점
+      ctx.lineTo(e.offsetX, e.offsetY) // 마지막 점
+      ctx.stroke();
+
+      [lastX, lastY] = [e.offsetX, e.offsetY] // 시작 점 매번 이동 시켜줌
+      hue++; 
+      if (hue >= 360) {
+        hue = 0;
+      }
+      if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+        direction = !direction;
+      }
+      if (direction){
+        ctx.lineWidth++;    
+      }
+      else {
+        ctx.lineWidth--;
+      }
+    }
+
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mousedown', (e) => {
+       isDrawing = true;
+       [lastX, lastY] = [e.offsetX, e.offsetY];  // 마우스 다운 시 처음 시작점 == e.offsetX, e.offsetY
+      });
+    canvas.addEventListener('mouseup', () => isDrawing = false);
+    canvas.addEventListener('mouseout', () => isDrawing = false);
+  </script>
+</body>
+</html>
