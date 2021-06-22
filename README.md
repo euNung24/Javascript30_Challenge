@@ -192,3 +192,54 @@
   + ctx.lineTo(x,y); //마지막 점
   + ctx.stroke(); 
 
+## Day9 - Dev Tools Tricks
+#### < Javascript >
+- console.log('%s', word)
+  
+  => %s 포함 시 해당 자리에 string을 넣을 수 있음
+
+- console.log('%c~')
+
+  => %c 이후 글씨에 스타일을 넣을 수 있음
+
+- console.assert(조건, '문장');
+
+  => 해당 조건을 충족시키지 않을 때 나타낼 문장으로 테스트 가능
+
+- console.warn('') / console.error('') / console.info('')
+
+  => 경고 / 에러메시지 / 정보를 나타냄
+
+- console.clear()
+
+  => console창 비우기
+
+- console.log(태그|id값|...)
+
+  => 해당 DOM 요소 보이기
+
+- console.dir(태그|id값|...)
+
+  => 해당 DOM요소의 태그만 보이기
+
+- forEach => console.group('')/console.groupCollapsed('') ... console.groupEnd('')
+
+  => 주어진 값으로 그룹화 지음
+
+  => 기본 : 그룹 값 열린 상태로 보여줌 
+
+  => groupCollapsed : 그룹 값 닫힌 상태로 보여줌 
+
+- console.count('')
+
+  => 해당 값이 언급 된 만큼 수를 count함
+
+- console.time('') ... console.timeEnd('')
+
+  => time : 시작 시점 , timeEnd : 끝 지점 
+
+  => timeEnd - time 시간을 구해줌
+
+- console.table();
+
+  => 주어진 배열을 테이블 형식으로 표시함
