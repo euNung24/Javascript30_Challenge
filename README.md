@@ -243,3 +243,9 @@
 - console.table();
 
   => 주어진 배열을 테이블 형식으로 표시함
+
+## Day10 - Hold Shift to Check Multiple Checkboxes
+#### <Javascript>
+- e.shiftKey 
+
+  => event 값에 shiftKey가 눌렸을 때
