@@ -278,7 +278,7 @@
 
 #### < Javascript >
 
-[HTMLMediaElement 속성]<https://developer.mozilla.org/ko/docs/Web/API/HTMLMediaElement>
+[HTMLMediaElement 속성 참고 링크](https://developer.mozilla.org/ko/docs/Web/API/HTMLMediaElement)
 
 - HTMLMediaElement.paused
 
