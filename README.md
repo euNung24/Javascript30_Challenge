@@ -214,6 +214,12 @@
 
 ## Day9 - Dev Tools Tricks
 
+#### < CSS >
+
+- elemnet:fullscreen
+
+  => 요소가 fullscreen일 때 CSS 설정
+
 #### < Javascript >
 
 - console.log('%s', word)
@@ -317,3 +323,9 @@
 - document.exitFullscreen()
 
   => 브라우저가 full-screen mode에서 창 모드로 다시 전환
+
+## Day12 - Key Sequence Detection(KONAMI CODE)
+
+#### < Javascript >
+
+- Element.splice(버릴 배열의 시작 인덱스, 남길 배열의 개수)
