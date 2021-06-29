@@ -329,3 +329,21 @@
 #### < Javascript >
 
 - Element.splice(버릴 배열의 시작 인덱스, 남길 배열의 개수)
+
+## Day13 - Slide In On Scroll
+
+#### < Javascript >
+
+[Debounce 참고 링크](https://kellis.tistory.com/142)
+
+- window.scrollY
+
+  => 스크롤 위치
+
+- 브라우저 상에서 이미지가 절반 보이는 위치
+
+  : (스크롤 위치 + 브라우저 창 높이) - (이미지 높이 / 2)
+
+- 브라우저 상에서 이미지의 bottom 위치
+
+  : (브라우저 상에서 이미지의 top 위치) + (이미지 높이)
