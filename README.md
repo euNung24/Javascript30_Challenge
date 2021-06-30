@@ -347,3 +347,40 @@
 - 브라우저 상에서 이미지의 bottom 위치
 
   : (브라우저 상에서 이미지의 top 위치) + (이미지 높이)
+
+## Day14 - JavaScript References VS Copying
+
+#### < Javascript >
+
+- 자료형 string, number, bolean
+
+  ```Javascript
+  let num = 10;
+  let num2 = num;
+  num = 5;
+  // 결과 : num = 5, num2 = 10
+  ```
+
+  => 이러한 방법으로 복사 가능
+
+- 자료형 배열(array), 객체(object)
+
+  ```Javascript
+  const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+  const team = players;
+  team[3] = 'Lux';
+  // 결과 : players = ['Wes', 'Sarah', 'Ryan', 'Lux']
+  //        team = ['Wes', 'Sarah', 'Ryan', 'Lux']
+  ``` 
+
+  => 다음과 같은 방법으로 복사 x (∵ Reference이기 때문)
+
+  => Array - slice, concat, spread function 등을 이용하여 복사
+
+  => Obejct - assign, spread function 등을 이용하여 복사
+
+    => 단, 위의 방법으로는 1 level deep만을 복사 가능
+
+    => lodash 라이브러리를 통해 deepClone 가능
+    
+    => deepClone을 하는 방법으로는 JSON을 사용하는 방법도 있지만 추천 x
