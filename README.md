@@ -371,7 +371,7 @@
   team[3] = 'Lux';
   // 결과 : players = ['Wes', 'Sarah', 'Ryan', 'Lux']
   //        team = ['Wes', 'Sarah', 'Ryan', 'Lux']
-  ``` 
+  ```
 
   => 다음과 같은 방법으로 복사 x (∵ Reference이기 때문)
 
@@ -379,8 +379,36 @@
 
   => Obejct - assign, spread function 등을 이용하여 복사
 
-    => 단, 위의 방법으로는 1 level deep만을 복사 가능
+  => 단, 위의 방법으로는 1 level deep만을 복사 가능
 
-    => lodash 라이브러리를 통해 deepClone 가능
-    
-    => deepClone을 하는 방법으로는 JSON을 사용하는 방법도 있지만 추천 x
+  => lodash 라이브러리를 통해 deepClone 가능
+
+  => deepClone을 하는 방법으로는 JSON을 사용하는 방법도 있지만 추천 x
+
+## Day16 - Mouse Move Shadow
+
+#### < HTML >
+
+- contenteditable 속성
+
+  => 사용자가 요소를 편집할 수 있는지 나타내는 열거형 특성
+
+  => true/빈 문자열 : 요소가 편집 가능함
+
+  => false : 요소가 편집 불가능함
+
+### < Javascript >
+
+- 객체 구조 분해 할당
+
+  ```Javascript
+  let {offsetX: x, offsetY: y} = e
+  // 결과
+  x = e.offsetX, y = e.offsetY
+  ```
+
+- this : 해당 함수를 실행하는 DOM
+
+- e.target : 해당 함수가 실행되는 DOM
+
+- Math.round() : 소수점을 내림
