@@ -385,6 +385,34 @@
 
   => deepClone을 하는 방법으로는 JSON을 사용하는 방법도 있지만 추천 x
 
+## Day15 - LocalStorage
+
+#### < Javascript >
+
+- event.preventDefault()
+
+  => form에서 submit을 해도 브라우저 새로 실행x (submit만 동작)
+
+  => a 태그를 눌러도 href 링크로 이동 x
+
+- JSON.parse()
+
+  => string 값을 배열로 반환
+
+- JSON.stringfy()
+
+  => 배열을 string 값으로 반환
+
+- localStorage : 해당 브라우저 내의 저장소
+
+  => getItem : 세팅된 값 불러옴
+
+  => setItem : 값 세팅
+
+- Element.matches()
+
+  => 해당 값이 있는지 확인
+
 ## Day16 - Mouse Move Shadow
 
 #### < HTML >
