@@ -440,3 +440,17 @@
 - e.target : 해당 함수가 실행되는 DOM
 
 - Math.round() : 소수점 반올림
+
+## Day17 - Sort Without Articles
+
+#### < Javascript >
+
+- Value.replace(/문자열/gi (찾을 문자열), '바꿀 문자열')
+
+  => /문자열/gi : 정규 표현식 - Day6 추가 설명있음
+
+  => /^문자열/ : 해당 문자열로 시작
+
+- Array.sort(a, b)
+
+  => 배열을 순차적으로 비교
