@@ -439,4 +439,4 @@
 
 - e.target : 해당 함수가 실행되는 DOM
 
-- Math.round() : 소수점을 내림
+- Math.round() : 소수점 반올림
