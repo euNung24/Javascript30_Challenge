@@ -454,3 +454,15 @@
 - Array.sort(a, b)
 
   => 배열을 순차적으로 비교
+
+## Day18 - Adding Up Times with Reduce
+
+#### < Javascript >
+
+- Arrat.map(parseFloat)
+
+  => 배열의 모든 자료형을 float로 변환
+
+- Math.floor()
+
+  => 소수점 내림
