@@ -191,7 +191,11 @@
 
   canvas.height = num;
 
-  => 캔버스 크기 재설정
+  => 캔버스 설정
+
+  => CSS에서 설정된 값 우선 순위 가짐
+
+  => 속성 값이 정해지지 않았거나, 유효하지 않을 경우 default 설정 값
 
 - 그림그리기 위한 기본 설정
 
@@ -466,3 +470,61 @@
 - Math.floor()
 
   => 소수점 내림
+
+## Day19 - Webcam
+
+#### < Javascript >
+
+- navigator
+
+  => 사용자의 state와 identity 확인
+
+- navigator.mediaDevices
+
+  => 카메라, 마이크와 미디어 입력 장치와 연결
+
+- MediaDevices.getUserMedia()
+
+  => MediaStream을 생성하는 미디어 입력을 사용할 수 있는 권한을 사용자로부터 허락받음
+
+  => Promise 반환
+
+- HTMLMEdiaElement.srcObject
+
+  => 미디어 소스를 세팅하거나 반환
+
+  => Object : MediaStream, MediaSource, Blob, File
+
+- CanvasRenderingContext2D.drawImage(image \[dx\] \[dy\] \[dwidth\] \[dheight\])
+
+  => canvas에 image를 그림
+
+- CanvasRenderingContext2D.getImageData(sw, sy, sw, sh)
+
+  => Canvas 2D API 를 ImageData로 반환
+
+- CanvasRenderingContext2D.putImageData
+
+  => ImageData를 canvas에 그려줌
+
+- CanvasRenderingContext2D.globalAlpha
+
+  => alpha(투명도) 값 지정
+
+  => 0.0 ~ 1.0의 값을 가짐(default = 1.0)
+
+- HTMLCanvasElement.toDataURL(type, encoderOptions)
+
+  => 이미지의 dataURL을 반환
+
+  => type의 default : image/png
+
+- ImageData.data
+
+  => 이미지의 pixel data
+
+  => RGBA 순서의 배열로 이루어짐
+
+- HTMLMediaElement: canplay event
+
+  => 사용자가 미디어에 접근할 수 있을 때 사용가능
