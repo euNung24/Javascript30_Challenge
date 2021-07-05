@@ -528,3 +528,43 @@
 - HTMLMediaElement: canplay event
 
   => 사용자가 미디어에 접근할 수 있을 때 사용가능
+
+## Day20 - Speech Detection
+
+#### < Javascript >
+
+- \[Window.\]SpeechRecognition
+
+  => Web Speech API
+
+  => SpeechRecognition() 생성자로 새 SpeechRecognition 객체 인스턴스 생성
+
+- SpeechRecognition.interimResults
+
+  => bool 값
+
+  => 중간 결과값을 반환할 지 결정(ex. SpeechRecognitionResult.isFinal)
+
+- SpeechRecognition.lang
+
+  => SpeechRecognition의 언어 지정
+
+  => default : HTML의 lang 값
+
+- SpeechRecognitionEvent.results
+
+  => 음성 인식 결과 목록 개체 반환
+
+- SpeechRecognitionAlternative.transcript
+
+  => 인식된 문장의 문자열로 반환
+
+- SpeechRecognition: start event
+
+  => 오디오를 듣기 시작했을 때 음성 인식이 시작
+
+- SpeechRecognition: end event
+
+  => 음성 인식이 해제 되었을 때 발생
+
+  => onend 이벤트 핸들러 속성으로도 사용가능(recognition.onend = function(){})
