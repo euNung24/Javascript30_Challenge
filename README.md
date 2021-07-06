@@ -568,3 +568,11 @@
   => 음성 인식이 해제 되었을 때 발생
 
   => onend 이벤트 핸들러 속성으로도 사용가능(recognition.onend = function(){})
+
+## Day21 - Geolocation : ios 환경에서 동작(chrome에서는 반환되는 값이 별로 없음)
+
+#### < Javascript >
+
+- Geolocation.watchPosition(success \[, error\[, options\]\])
+
+  => 장소의 위치가 변경될 때마다 호출하는 콜백 등록
