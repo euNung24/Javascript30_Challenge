@@ -576,3 +576,21 @@
 - Geolocation.watchPosition(success \[, error\[, options\]\])
 
   => 장소의 위치가 변경될 때마다 호출하는 콜백 등록
+
+## Day22 - Follow Along Link Highlight
+
+#### < CSS >
+
+- transform: translate(x, y)
+
+  => x축과 y축 거리만큼 요소 이동
+
+#### < Javascript >
+
+- Element.getBoundingClientRect()
+
+  => 요소 크기, 위치 정보를 제공하는 DOMRect 객체 반환
+
+- Element:mouseenter event
+
+  => 해당 요소에 마우스가 들어왔을 때 이벤트 발생
