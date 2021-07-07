@@ -594,3 +594,27 @@
 - Element:mouseenter event
 
   => 해당 요소에 마우스가 들어왔을 때 이벤트 발생
+
+## Day23 - Speech Synthesis
+
+#### < Javascript >
+
+- SpeechSynthesisUtterance
+
+  => 음성 서비스가 읽어야하는 정보(언어, 높낮이, 속도, 내용 등)를 포함하는 Web Speech API
+
+- SpeechSynthesis
+
+  => 음성 서비스를 위한 컨트롤러 Web Speech API
+
+- SpeechSynthesis: voiceschanged event
+
+  => 음성 목록을 채우는 이벤트
+
+- SpeechSynthesis.getVoices()
+
+  => 현재 장치에서 사용 가능한 모든 SpeechSyntehsisVoice 객체를 반환
+
+- Array.find()
+
+  => 주어진 함수를 만족하는 첫 번째 요소를 반환
