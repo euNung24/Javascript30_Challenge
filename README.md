@@ -618,3 +618,17 @@
 - Array.find()
 
   => 주어진 함수를 만족하는 첫 번째 요소를 반환
+
+  ## Day24 - Sticky Nav
+
+  #### < CSS >
+
+  - transition - width
+
+    => transition으로 변화를 줄 때 width는 반응x
+
+    => ∴ max-width로 적용해야함
+
+  - position: fixed
+
+    => float처럼 동작
