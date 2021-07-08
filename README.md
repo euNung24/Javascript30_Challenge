@@ -646,3 +646,15 @@
   - event.stopPropagation(): bubbling과 capture을 멈춤
 
   - option\[once\] : 해당 eventListener을 한 번 실행 후 제거
+
+## Day26
+
+#### < Javascript >
+
+- DOMTokenList.contain(token)
+
+  => token 포함 여부를 bool로 반환
+
+- EventTarget.offsetTop, EventTarget.offsetLeft
+
+  => 해당 요소의 Top, Left 위치를 부모 요소 기준으로 반환
