@@ -647,7 +647,7 @@
 
   - option\[once\] : 해당 eventListener을 한 번 실행 후 제거
 
-## Day26
+## Day26 - Stripe Follow Along Nav
 
 #### < Javascript >
 
