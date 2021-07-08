@@ -633,7 +633,7 @@
 
   => float처럼 동작
 
-## Day25
+## Day25 - Event Capture, Propagation, Bubbling and Once
 
 #### < Javascript >
 
