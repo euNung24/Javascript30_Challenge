@@ -632,3 +632,17 @@
 - position: fixed
 
   => float처럼 동작
+
+## Day25
+
+#### < Javascript >
+
+- EventTarget.addEventListener(type, listener, option|useCapture)
+
+  - Bubbling : 중첩된 요소 내에서 이벤트 타겟에서부터 부모 요소 순으로 이벤트 발생
+
+  - capture : 중첩된 요소 내에서 이벤트 요소의 부모 요소부터 이벤트 타겟 순으로 이벤트 발생
+
+  - event.stopPropagation(): bubbling과 capture을 멈춤
+
+  - option\[once\] : 해당 eventListener을 한 번 실행 후 제거
