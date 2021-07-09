@@ -658,3 +658,15 @@
 - EventTarget.offsetTop, EventTarget.offsetLeft
 
   => 해당 요소의 Top, Left 위치를 부모 요소 기준으로 반환
+
+## Day28 - Video Speed Controller
+
+#### < Javascript >
+
+- MouseEvent.pageY
+
+  => 브라우저를 기준으로 한 마우스 포인터의 y 좌표
+
+- Number.toFixed()
+
+  => 숫자를 고정 소수점 표기하여 반환
