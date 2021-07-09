@@ -670,3 +670,19 @@
 - Number.toFixed()
 
   => 숫자를 고정 소수점 표기하여 반환
+
+## Day29 - Countdown Timer
+
+#### < Javascript >
+
+- clearInterval()
+
+  => setInterval() 객체 제거
+
+- Date.now()
+
+  => 1970년 1월 1일 00:00:00 UTC로부터 지난 시간을 밀리초 단위의 숫자 값으로 반환
+
+- new Date()
+
+  => 생성자로 호출할 경우 새로운 Date 객체를 반환
