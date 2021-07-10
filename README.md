@@ -659,6 +659,18 @@
 
   => 해당 요소의 Top, Left 위치를 부모 요소 기준으로 반환
 
+## Day27 - Click and Drag
+
+#### < Javascript >
+
+- HTMLElement.offsetLeft
+
+  => 해당 객체와 부모 요소와의 왼쪽 거리를 픽셀 단위로 반환
+
+- Element.scrollLeft
+
+- 객체의 왼쪽을 기준으로 스크롤된 위치를 픽셀 단위로 지정
+
 ## Day28 - Video Speed Controller
 
 #### < Javascript >
