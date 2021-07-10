@@ -698,3 +698,11 @@
 - new Date()
 
   => 생성자로 호출할 경우 새로운 Date 객체를 반환
+
+## Day30 - Whack A Mole
+
+#### < Javascript >
+
+- Event.isTrusted
+
+  => 이벤트가 사용자 행위에 의해 발생되었으면 true, 스크립트로 인해 생성,수정 되었거나 dispatchEvent를 통해 보내졌으면 false인 논리값
