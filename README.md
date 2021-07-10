@@ -669,7 +669,7 @@
 
 - Element.scrollLeft
 
-- 객체의 왼쪽을 기준으로 스크롤된 위치를 픽셀 단위로 지정
+  => 객체의 왼쪽을 기준으로 스크롤된 위치를 픽셀 단위로 지정
 
 ## Day28 - Video Speed Controller
 
