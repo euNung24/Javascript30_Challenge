@@ -1,3 +1,33 @@
+## Day1 - Drum Kit
+
+#### < Javascript >
+
+- Element.addEventListener('transitionend', function);
+
+  => transition이 끝나면 해당 함수를 실행
+
+- Element.classList.add()
+
+  => 해당 객체에 클래스 추가
+
+- dataset.dataname
+
+  => HTML에서 data-sth에서 (sth = dataname) 설정한 값을 가져옴
+
+- Array|NodeList.forEach
+
+  => for 반복문을 내부적으로 수행
+
+- HTMLMediaElement.currentTime
+
+  => 현재 재생 시점을 초 단위로 표현한 double 값
+
+  => 이 값을 세팅하여 재생 시점 변경 가능
+
+- TransitionEvent.propertyName
+
+  => transition과 관련된 CSS 속성의 이름을 포함하는 DOMString
+
 ## Day2 - Make a clock
 
 #### < CSS >
@@ -47,14 +77,6 @@
   => blur, 그레이효과 등의 효과 줄 수 있음
 
 #### < Javascript >
-
-- forEach
-
-  => for 반복문을 내부적으로 수행
-
-- dataset.dataname
-
-  => HTML에서 data-sth에서 (sth = dataname) 설정한 값을 가져옴
 
 - addEventListener
 
@@ -111,10 +133,6 @@
 - <name>.classList.toggle('<classname>');
 
   => 해당 name 태그의 클래스에 해당하는 classname이 있다면 삭제, 없다면 추가
-
-- <name>.addEventListener('transitionend', <function>);
-
-  => transition이 끝나면 해당 함수를 실행
 
 ## Day6 - AJAX Type Ahead
 
