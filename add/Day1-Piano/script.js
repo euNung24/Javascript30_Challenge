@@ -16,16 +16,16 @@ function clickPiano(e) {
   let key;
   if (e.target.tagName === "SPAN") {
     key = e.target.parentElement.dataset.key;
-    console.log(key);
+    e.target.parentElement.classList.add("toggle");
   } else if (e.target.tagName === "KBD") {
     key = e.target.dataset.key;
+    e.target.classList.add("toggle");
   } else return;
   const sound = document.querySelector(`audio[data-key="${key}"]`);
 
   if (!sound) {
     return;
   }
-  e.target.classList.add("toggle");
   sound.currentTime = 0;
   sound.play();
 }
@@ -36,6 +36,10 @@ keys.forEach((key) => {
   key.addEventListener("click", clickPiano);
   key.addEventListener("transitionend", (e) => {
     if (e.propertyName !== "box-shadow") return;
-    e.target.classList.remove("toggle");
+    if (e.target.tagName === "SPAN") {
+      e.target.parentElement.classList.remove("toggle");
+    } else {
+      e.target.classList.remove("toggle");
+    }
   });
 });
