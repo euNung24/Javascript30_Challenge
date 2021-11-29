@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Panel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    .wrapper {
+      height: 100vh;
+      display: flex;
+    }
+    .panel {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      transition: 
+      flex 0.5s cubic-bezier(0.53,-0.7, 0, 1.32),
+      font-size 0.5s cubic-bezier(0.53,-0.7, 0, 1.32),
+      background 0.2s;
+      
+    }
+    .panel > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      text-transform: uppercase;
+    }
+
+    .panel1 {
+      background: center/cover url('../Day5-Flex/images/KakaoTalk_20210518_014134829.jpg') no-repeat;
+    }
+    .panel2 {
+      background: center/cover url('../Day5-Flex/images/KakaoTalk_20210518_014134829_02.jpg') no-repeat;
+    }
+    .panel3 {
+      background: center/cover url('../Day5-Flex/images/KakaoTalk_20210518_014134829_03.jpg') no-repeat;
+    }
+    .panel4 {
+      background: center/cover url('../Day5-Flex/images/KakaoTalk_20210518_014134829_04.jpg') no-repeat;
+    }
+    .panel5 {
+      background: center/cover url('../Day5-Flex/images/KakaoTalk_20210518_115207095.jpg') no-repeat;
+    }
+    
+    .panel.open {
+      flex: 5;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .panel > *:first-child {
+      transform: translateY(-100%);
+    }
+    .panel.open-active > *:first-child {
+      transform: translateY(0);
+    }
+    .panel > *:last-child {
+      transform: translateY(100%);
+    }
+    .panel.open-active > *:last-child {
+      transform: translateY(0%);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="panel panel1">
+      <div>Here</div>
+      <div>I</div>
+      <div>Am</div>
+    </div>
+    <div class="panel panel2">
+      <div>You</div>
+      <div>Can</div>
+      <div>Do it</div>
+    </div>
+    <div class="panel panel3">
+      <div>Don't</div>
+      <div>Give</div>
+      <div>Up</div>
+    </div>
+    <div class="panel panel4">
+      <div>Someday</div>
+      <div>You</div>
+      <div>Will</div>
+    </div>
+    <div class="panel panel5">
+      <div>Remeber</div>
+      <div>Everything</div>
+      <div>YourSelf</div>
+    </div>
+  </div>
+  <script>
+    const panels = document.querySelectorAll('.panel');
+    
+    panels.forEach(panel => { 
+      panel.addEventListener('click', (e) => {
+        panels.forEach(item => item.classList.remove('open'));
+        if(e.composedPath().indexOf(panel) >= 0) {
+          panel.classList.toggle('open');
+        };
+      })
+    });
+    panels.forEach(panel => panel.addEventListener('transitionend', (e) => {
+      if(e.propertyName === 'flex-grow') {
+        panel.classList.toggle('open-active');
+      }
+    }))
+  </script>
+</body>
+</html>
