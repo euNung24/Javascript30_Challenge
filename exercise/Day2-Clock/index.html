@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <style>
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .clock {
+      width: 20rem;
+      height: 20rem;
+      border-radius: 100%;
+      border: 4px solid #000;
+      position: relative;
+    }
+    .body {
+      position: absolute;
+      background-color: #000;
+      top: 50%;
+      transform-origin: 100%;
+      transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    }
+    .hour {
+      width: 30%;
+      height: 4px;
+      left: 20%;
+    }
+    .minute {
+      width: 40%;
+      height: 3px;
+      left: 10%;
+    }
+    .second {
+      width: 45%;
+      height: 2px;
+      left: 5%;
+    }
+    .numbers {
+      position: absolute;
+      width: 10%;
+      height: 100%;
+      left: 45%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="clock">
+      <div class="body hour"></div>
+      <div class="body minute"></div>
+      <div class="body second"></div>
+      <div class="numbers">1</div>
+      <div class="numbers">2</div>
+      <div class="numbers">3</div>
+      <div class="numbers">4</div>
+      <div class="numbers">5</div>
+      <div class="numbers">6</div>
+      <div class="numbers">7</div>
+      <div class="numbers">8</div>
+      <div class="numbers">9</div>
+      <div class="numbers">10</div>
+      <div class="numbers">11</div>
+      <div class="numbers">12</div>
+    </div>
+  </div>
+  <script>
+    const hour = document.querySelector('.hour');
+    const minute = document.querySelector('.minute');
+    const second = document.querySelector('.second');
+    const numbers = document.querySelectorAll('.numbers');
+
+    numbers.forEach((num, i) => num.style.transform=`rotateZ(${360 / 12 * i + 30}deg)`);
+
+    setInterval(() => {
+      const currentTime = new Date();
+      const currentHour = currentTime.getHours();
+      const currentMins = currentTime.getMinutes();
+      const currentSecs = currentTime.getSeconds();
+      const secDeg = 360 / 60 * currentSecs;
+      const minDeg = 360 / 60 * currentMins;
+      const hourDeg = 360 / 12 * currentHour;
+      second.style.transform = `translateY(-50%) rotateZ(${secDeg + 90}deg)`;
+      minute.style.transform = `translateY(-50%) rotateZ(${minDeg + 90}deg)`;
+      hour.style.transform = `translateY(-50%) rotateZ(${hourDeg + 90}deg)`;
+    }, 1000);   
+  </script>
+</body>
+</html>
