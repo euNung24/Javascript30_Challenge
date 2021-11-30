@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #e9d4ff;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  form {
+    margin: 50px auto;
+    max-width: 400px;
+  }
+  .search {
+    width: 100%;
+    padding: 20px;
+    border: 10px solid #f7f7f7;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 2rem;
+    z-index: 10;
+  }
+
+  .lists {
+    width: 100%;
+    perspective: 500px;
+  }
+  
+  .lists li {
+    margin: 0 auto;
+    width: 80%;
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    text-transform: capitalize;
+  }
+
+  .lists span {
+    display: block;
+  }
+
+  .lists .address {
+    font-size: 0.9rem;
+  }
+
+  .lists li:nth-child(odd) {
+    transform: rotateX(-20deg) translateY(2px);
+    background: linear-gradient(to top,  #ffffff 0%,#EFEFEF 100%);
+  }
+
+  .lists li:nth-child(even) {
+    transform: rotateX(20deg) translateY(2px);
+    background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);
+  }
+
+  .lists .value {
+    display: inline;
+    background-color: #e9d4ff;
+  }
+
+</style>
+<body>
+  <form>
+    <input type="text" class="search" placeholder="Name or Address">
+    <ul class="lists">
+      <li>Filter for a name</li>
+      <li>or an address</li>
+    </ul>
+  </form>
+  <script>
+    const url = 'https://gist.githubusercontent.com/pandamon24/db3f826feb984eff8e7fdc32b63fa959/raw/502711157ad897e93a58132e8d963b6e66d44087/info.json';
+    const datas = [];
+    const input = document.querySelector('.search');
+    const ul = document.querySelector('.lists');
+
+    async function getJson(url) {
+      const promise = await fetch(url);
+      const response = await promise.json();
+      datas.push(...response);
+    }
+    
+    function findValues(finding) {
+      return datas.filter(data => {
+        const regex = new RegExp(finding, 'gi');
+        return data.name.match(regex) || data.address.match(regex);
+      });
+    }
+
+    function showValues() {
+      const lists = findValues(this.value);
+      const liElement = lists.map(li => {
+        const regex = new RegExp(this.value, 'gi');
+        const name = li.name.replace(regex, `<span class="value">${this.value}</span>`);
+        const address = li.address.replace(regex, `<span class="value">${this.value}</span>`);
+        return `
+        <li>
+          <span class="name">${name}</span>
+          <span class="address">${address}</span>
+        </li>
+      `}).join('');
+      ul.innerHTML = liElement;
+    }
+
+    getJson(url);
+
+    input.addEventListener('change', showValues);
+    input.addEventListener('keyup', showValues);
+
+  </script>
+</body>
+</html>
